@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <title>Survey</title>
+</head>
+
+<body>
+    <div class="container">
+        <form method="POST" role="form">
+            <div class="row">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Name</label>
+                    <input type="name" class="form-control" id="name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="picture">Upload a Picture</label>
+                    <input type="file" class="form-control-file" id="picture">
+                </div>
+            </div>
+            <div class="row">
+                <h6>(Select 1 for strongly disagree, 5 for strongly agree)</h3>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="q1">1: I love dogs</label>
+                    <select class="form-control" id="q1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="q2">2: I love cats</label>
+                    <select class="form-control" id="q2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="q3">3: I like sports</label>
+                    <select class="form-control" id="q3">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="q4">4: I like watching movies</label>
+                    <select class="form-control" id="q4">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="q5">5: I like spending time in the outdoors</label>
+                    <select class="form-control" id="q5">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="q6">6: I have a great sense of humor</label>
+                    <select class="form-control" id="q6">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="q7">7: I am religious</label>
+                    <select class="form-control" id="q7">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="q8">8: Lord of the Rings is awesome</label>
+                    <select class="form-control" id="q8">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="q9">9: Star Wars is awesome</label>
+                    <select class="form-control" id="q9">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="q10">10: I am politically conservative</label>
+                    <select class="form-control" id="q10">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-left">
+                    <button type="submit" class="btn btn-primary" id="add-btn"><span
+                            class="submit"></span>Submit</button>
+                </div>
+            </div>
+            <br>
+
+        </form>
+    </div>
+    <script type="text/javascript">
+
+        $("#btn-primary").on("click", function (event) {
+            event.preventDefault();
+            var newProfile = {
+                name: $("#name").val().trim(),
+                picture: $("#role").val().trim(),
+                q1: $("#q1").val(),
+                q2: $("#q2").val(),
+                q3: $("#q3").val(),
+                q4: $("#q4").val(),
+                q5: $("#q5").val(),
+                q6: $("#q6").val(),
+                q7: $("#q7").val(),
+                q8: $("#q8").val(),
+                q9: $("#q9").val(),
+                q10: $("#q10").val()
+            };
+
+            $.post("/api/profiles", newProfile)
+                .then(function (data) {
+                    console.log("add.html", data);
+                    alert("Adding profile...");
+                });
+        });
+
+    </script>
+</body>
+
+</html>
