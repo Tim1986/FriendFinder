@@ -7,9 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -20,6 +19,28 @@
 </head>
 
 <body>
+    
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Your closest match is:</p>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <form method="POST" role="form">
             <div class="row">
@@ -169,28 +190,32 @@
     </div>
     <script type="text/javascript">
 
-        $("#btn-primary").on("click", function (event) {
+        $(".btn-primary").on("click", function (event) {
             event.preventDefault();
             var newProfile = {
                 name: $("#name").val().trim(),
-                picture: $("#role").val().trim(),
-                q1: $("#q1").val(),
-                q2: $("#q2").val(),
-                q3: $("#q3").val(),
-                q4: $("#q4").val(),
-                q5: $("#q5").val(),
-                q6: $("#q6").val(),
-                q7: $("#q7").val(),
-                q8: $("#q8").val(),
-                q9: $("#q9").val(),
-                q10: $("#q10").val()
+                picture: $("#role").val(),
+                scores: []
             };
+            newProfile.scores.push(parseFloat($("#q1").val())),
+                newProfile.scores.push(parseFloat($("#q2").val())),
+                newProfile.scores.push(parseFloat($("#q3").val())),
+                newProfile.scores.push(parseFloat($("#q4").val())),
+                newProfile.scores.push(parseFloat($("#q5").val())),
+                newProfile.scores.push(parseFloat($("#q6").val())),
+                newProfile.scores.push(parseFloat($("#q7").val())),
+                newProfile.scores.push(parseFloat($("#q8").val())),
+                newProfile.scores.push(parseFloat($("#q9").val())),
+                newProfile.scores.push(parseFloat($("#q10").val())),
 
-            $.post("/api/profiles", newProfile)
-                .then(function (data) {
-                    console.log("add.html", data);
-                    alert("Adding profile...");
-                });
+                $.post("/api/profiles", newProfile)
+                    .then(function (data) {
+                        console.log("Here is the data: " + data.name);
+                        $(".modal-body").append("<div>" + data.name + "!</div>")
+                        $(".modal-body").append("<img src='" + data.picture + "' alt='Your new friend' width='460' height='345'>")
+                        // <img src="https://i2.wp.com/fanfest.com/wp-content/uploads/2017/10/michael-scott-the-office.jpg?w=623" alt="Your new friend" width="460" height="345">
+                        $("#modal").modal();
+                    });
         });
 
     </script>

@@ -1,32 +1,8 @@
-var express = require("express");
-var path = require("path");
-
-var app = express();
-var PORT = 8080;
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-var profiles = [
-    {
-        "name": "Michael Scott",
-        "picture": "img",
-        "scores": [
-            1,
-            3,
-            4,
-            2,
-            2,
-            2,
-            3,
-            1,
-            1,
-            1
-        ]
-    },
+//module.exports = function() {
+   var profiles = [
     {
         "name": "Dwight Schrute",
-        "picture": "img",
+        "picture": 'https://imgix.bustle.com/rehost/2016/9/13/84faf92b-4706-4be1-b2e7-a0cdb6607921.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70',
         "scores": [
             5,
             5,
@@ -41,8 +17,8 @@ var profiles = [
         ]
     },
     {
-        "name": "Michael Scott",
-        "picture": "img",
+        "name": "Andy Bernard",
+        "picture": 'https://i.imgur.com/Aq597h2.jpg?1',
         "scores": [
             3,
             3,
@@ -55,29 +31,24 @@ var profiles = [
             2,
             4
         ]
-    }
+    },
+    {
+        "name": "Michael Scott",
+        "picture": 'https://i2.wp.com/fanfest.com/wp-content/uploads/2017/10/michael-scott-the-office.jpg?w=623',
+        "scores": [
+            1,
+            3,
+            4,
+            2,
+            2,
+            2,
+            3,
+            1,
+            1,
+            1
+        ]
+    },
 ];
+//}
 
-app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
-});
-
-app.get("/add", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/survey.html"));
-});
-
-app.post("/api/profiles", function (req, res) {
-    var newProfile = req.body;
-
-    newProfile.routeName = newProfile.name.replace(/\s+/g, "").toLowerCase();
-
-    console.log(newProfile);
-
-    characters.push(newProfile);
-
-    // Need something for the popup here
-});
-
-app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
-});
+module.exports= profiles
